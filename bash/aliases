@@ -1,0 +1,26 @@
+alias l=ls
+alias ll='ls -hal'
+alias lcd='cd && ll'
+
+alias X=exit
+
+alias C=clear
+alias CC='history -c'
+alias CCC='C && CC'
+
+alias e=vi
+alias ea='e ~/.bash_aliases'
+alias sa='source ~/.bash_aliases'
+
+alias dg='ddgr'
+alias ai='tgpt'
+alias wiki='dg !w'
+alias amazon='dg -w amazon.de'
+alias ebay='dg -w ebay.de'
+alias youtube='dg -w youtube.com'
+
+alias wifi='nmcli -f ALL dev wifi'
+
+alias update='sudo apt update && sudo apt upgrade && sudo apt update'
+alias restart='sudo shutdown -r now'
+alias shutup='sudo shutdown now'
