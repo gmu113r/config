@@ -3,6 +3,9 @@
 ;;; ***********************************************************************************************************************************
 ;;; Emacs generic configurations
 ;;; -----------------------------------------------------------------------------------------------------------------------------------
+;;; Author: gmu113r@duck.com
+;;; ***********************************************************************************************************************************
+
 ;;; Many of Emacs’s defaults are ill-suite, but the first one that needs fixing is the shockingly low garbage-collection threshold, which defaults to a paltry 8kb. Setting it to 100mb seems to strike a nice balance between GC pauses and performance. We also need to bump the number of bindings/unwind-protects (max-specpdl-size).
 (setq gc-cons-threshold 100000000)
 (setq max-specpdl-size 5000)
@@ -88,6 +91,12 @@
 (set-frame-font "Iosevka 13" nil t)
 
 ;;; ***********************************************************************************************************************************
+;;; Magit: https://systemcrafters.net/mastering-git-with-magit/introduction/
+;;; -----------------------------------------------------------------------------------------------------------------------------------
+(use-package magit
+  :ensure t)
+
+;;; ***********************************************************************************************************************************
 ;;; Evil is an extensible vi layer for Emacs. It provides Vim features like Visual selection and text objects.(https://www.emacswiki.org/emacs/Evil)
 ;;; -----------------------------------------------------------------------------------------------------------------------------------
 (use-package evil
@@ -98,6 +107,12 @@
   (setq evil-want-keybinding nil)
   :config
   (evil-mode t))
+
+(use-package evil-collection
+  :ensure t
+  :after evil
+  :init
+  (evil-collection-init))
 
 ;;; ***********************************************************************************************************************************
 ;;; ORG Mode
